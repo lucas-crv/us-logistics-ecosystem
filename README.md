@@ -30,7 +30,7 @@ The challenge was to connect different departments (Warehouse, Drivers, Managers
 ```mermaid
 graph TD
     %% Database Central
-    DB[(Microsoft Dataverse)]
+    DB[(Microsoft Sharepoint)]
     
     %% Application Suite
     subgraph "The Ecosystem (6-App Suite)"
@@ -53,11 +53,11 @@ graph TD
     %% Logic & Automation
     DB --> PA{Power Automate}
     PA --> N[Real-time Notifications]
-    PA --> PDF[Automated PDF/BOL Generation]
+    PA --> PDF[Automated Email Generation]
     PA --> M[Maintenance Alerts]
 
     %% Styling
-    style DB fill:#742774,stroke:#333,stroke-width:2px,color:#fff
+    style DB fill:#6abce2,stroke:#333,stroke-width:2px,color:#fff
     style PA fill:#0066FF,stroke:#333,stroke-width:2px,color:#fff
 ```
 

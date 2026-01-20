@@ -13,14 +13,53 @@ This project represents a full-scale digital transformation for a logistics ente
 
 The challenge was to connect different departments (Warehouse, Drivers, Managers, and Clients). The solution was broken down into specialized modules:
 
-| App | Target User | Key Functionality |
+| App | Target User | Purpose & Key Functionality |
 | :--- | :--- | :--- |
-| **Dispatch Command** | Operations Managers | Real-time load assignment and route optimization. |
-| **Driver Hub** | Truck Drivers | Load confirmation, digital BOL (Bill of Lading), and GPS logging. |
-| **Warehouse Sync** | Floor Staff | Inventory tracking and loading dock status updates. |
-| **Fleet Maintenance** | Mechanics | Vehicle health monitoring and service scheduling. |
-| **Client Portal** | Customers | Real-time tracking and delivery confirmation. |
-| **Admin Dashboard** | Executives | Power BI integrated analytics for KPI monitoring. |
+| **Loads** | Dispatchers/Ops | Comprehensive load management, including tracking and the creation of new cargo entries. |
+| **Driver** | Fleet Managers | Full control over driver profiles and digital storage for driver-specific compliance documents. |
+| **Truck** | Fleet/Maintenance | Management of the truck fleet, including document tracking and scheduling of required maintenance. |
+| **Vendors** | Admin/Procurement | Centralized directory for registered companies (Shipper, Receiver, Vendor, Contractor, and Client). |
+| **Contact** | Communication | Management of point-of-contacts for registered vendors, suppliers, and responsible staff. |
+| **Trailer** | Fleet/Maintenance | Tracking of company trailers, including document management and required maintenance logs. |
+
+---
+
+## 📊 System Architecture Diagram
+> **Note:** The diagram below is rendered automatically by GitHub using Mermaid.
+
+```mermaid
+graph TD
+    %% Database Central
+    DB[(Microsoft Dataverse)]
+    
+    %% Application Suite
+    subgraph "The Ecosystem (6-App Suite)"
+        L[Loads App]
+        D[Driver App]
+        T[Truck App]
+        V[Vendors App]
+        C[Contact App]
+        Tr[Trailer App]
+    end
+
+    %% Connections
+    L <--> DB
+    D <--> DB
+    T <--> DB
+    V <--> DB
+    C <--> DB
+    Tr <--> DB
+
+    %% Logic & Automation
+    DB --> PA{Power Automate}
+    PA --> N[Real-time Notifications]
+    PA --> PDF[Automated PDF/BOL Generation]
+    PA --> M[Maintenance Alerts]
+
+    %% Styling
+    style DB fill:#742774,stroke:#333,stroke-width:2px,color:#fff
+    style PA fill:#0066FF,stroke:#333,stroke-width:2px,color:#fff
+```
 
 ---
 

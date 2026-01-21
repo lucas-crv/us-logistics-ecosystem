@@ -97,7 +97,7 @@ graph TD
 > **Note:** Due to NDA (Non-Disclosure Agreement), some data in the screenshots has been blurred.
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x450.png?text=Dashboard+Preview+Coming+Soon" width="80%">
+  <img width="1321" height="543" alt="Vendors Home Blur" src="https://github.com/user-attachments/assets/e29fb61b-ee94-46c9-88a5-5caff7ce2902" />
 </p>
 
 ---
